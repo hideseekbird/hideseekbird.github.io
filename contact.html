@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Hide & Seek — A British Bird Logging App.">
+  <title>Contact | Hide & Seek</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell contact">
+    <header class="site-header">
+      <a class="brand" href="index.html">Hide & Seek | A British Bird Logging App</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </header>
+
+    <main class="contact-panel">
+      <h1>Contact</h1>
+      <p class="contact-copy">Questions, feedback or support? Send a message below. Pressing Send opens your email app with the message filled in.</p>
+
+      <form class="contact-form" id="contact-form">
+        <div class="two-col">
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="firstName" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="lastName" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button class="primary-button" type="submit">SEND</button>
+        <p class="mail-note">Support email: hide.seek.bird@gmail.com</p>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <a href="https://www.instagram.com/hide.seek.bird/" target="_blank" rel="noopener noreferrer">Instagram @hide.seek.bird</a>
+      <a href="mailto:hide.seek.bird@gmail.com?subject=Hide%20%26%20Seek%20mailing%20list&body=Hi%2C%20please%20add%20me%20to%20the%20Hide%20%26%20Seek%20mailing%20list.">Mailing list</a>
+      <a href="faq.html">FAQs</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const first = document.getElementById('first-name').value.trim();
+      const last = document.getElementById('last-name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const name = [first, last].filter(Boolean).join(' ');
+      const subject = encodeURIComponent('Hide & Seek website enquiry');
+      const body = encodeURIComponent(
+        (name ? 'Name: ' + name + '\n' : '') +
+        (email ? 'Reply email: ' + email + '\n\n' : '\n') +
+        message
+      );
+
+      window.location.href = 'mailto:hide.seek.bird@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
