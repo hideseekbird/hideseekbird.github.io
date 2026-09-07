@@ -2,11 +2,19 @@
 
 This folder is ready for GitHub Pages.
 
+## Current live wiring
+
+- **iPhone beta:** the homepage button links to the public TestFlight at `https://testflight.apple.com/join/pFGsT41k`.
+- **Android beta:** Google Play Open testing is not available yet, so the Android button opens the mailing-list signup as a waitlist.
+- **Mailing list:** the homepage and footer use the Kit embed with UID `2d5aa97600`.
+- **Privacy:** the Privacy Policy includes the website mailing-list/Kit processing.
+
 ## Files
 
-- `index.html` — homepage
+- `index.html` — homepage and mailing-list modal
+- `site.js` — mailing-list modal behaviour
 - `contact.html` — contact page
-- `privacy.html` — V1 privacy policy
+- `privacy.html` — privacy policy
 - `faq.html` — FAQ placeholder
 - `styles.css` — all visual styling and responsive rules
 - `assets/hero-hide.png` — homepage background
@@ -14,17 +22,10 @@ This folder is ready for GitHub Pages.
 
 ## Publish with GitHub Pages
 
-1. Create a new public GitHub repository.
-2. Upload all files and the `assets` folder to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Choose the `main` branch and `/ (root)`.
-6. Save. GitHub will show the public website address when deployment finishes.
+1. Upload/replace these files and the `assets` folder in the repository root.
+2. Commit the changes to the branch used by GitHub Pages (normally `main`).
+3. GitHub Pages will redeploy the site automatically.
 
-## Before launch
+## When Android Open testing becomes available
 
-- Replace the disabled Android/iOS buttons in `index.html` with the live store URLs.
-- Review the Privacy Policy and add your legal/trading identity if you decide it should appear publicly.
-- The mailing-list links currently open an email to `hide.seek.bird@gmail.com`.
-- The Contact form also opens the visitor's email program because GitHub Pages cannot process server-side forms.
-- The site uses Pixelify Sans from Google Fonts, so the font requires an internet connection.
+In `index.html`, replace the Android waitlist anchor with the Google Play Open testing URL and change the button text to `Test on Android`. The iPhone and Kit links can stay as they are.
